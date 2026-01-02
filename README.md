@@ -67,7 +67,66 @@ You can check that things worked and diagnose problems by typing this in the con
 git_sitrep()
 ```
 
-### 2.3 Ensure that Git/GitHub/RStudio are communicating
+### 2.3 Get a personal access token (PAT)
+Personal access tokens are an alternative to using passwords for authentication to GitHub, and they make working with GitHub through RStudio much easier. I recommend creating one for this class, though you could use an existing one if you have it. The instructionsn below are modified from [this longer guide](https://usethis.r-lib.org/articles/git-credentials.html) from the creators of the usethis package. 
+
+Type:
+```
+usethis::create_github_token()
+```
+
+As a small note, see how we referenced the `usethis` package with two colons `::` before calling the `create_github_token()` function? That's a way to be very specific to R about which package to look in for the function. It's not usually necessary if you have the package loaded.
+
+Assuming you’re signed into GitHub (you should be), `create_github_token()` takes you to a pre-filled form to create a new PAT. You can get to the same page in the browser by clicking on “Generate new token” from https://github.com/settings/tokens. The advantage of create_github_token() is that the creators of the usethis package have pre-selected some recommended scopes, which you can look over and adjust before clicking “Generate token”.
+
+It is a very good idea to describe the token’s purpose in the Note field, because one day you might have multiple PATs. We recommend naming each token after its use case, such as the computer or project you are using it for, e.g. “2026 ds4eeb personal laptop”. In the future, you will find yourself staring at this list of tokens, because inevitably you’ll need to re-generate or delete one of them. Make it easy to figure out which token you need to fiddle with.
+
+GitHub encourages the use of perishable tokens, with a default Expiration period of 30 days. Unless you have a specific reason to fight this, I recommend accepting this default. I assume that GitHub’s security folks have good reasons for their recommendation. But, of course, you can adjust the Expiration behaviour as you see fit (perhaps the end of this course).
+
+Once you’re happy with the token’s Note, Expiration, and Scopes, click “Generate token”.
+
+You won’t be able to see this token again, so don’t close or navigate away from this browser window until you store the PAT locally. Copy the PAT to the clipboard, anticipating what we’ll do next: trigger a prompt that lets us store the PAT in the Git credential store.
+
+Sidebar about storing your PAT: If you use a password management app, such as 1Password or Bitwarden (highly recommended!), you might want to add this PAT (and its Note) to the entry for GitHub. Storing your PAT in the Git credential store is a semi-persistent convenience, sort of like a browser cache or “remember me” on a website, but it’s quite possible you will need to re-enter your PAT in the future. You could decide to embrace the impermanence of your PAT and, if it is somehow removed from the store, you’ll just re-generate a new PAT and re-enter it. If you accept the default 30-day expiration period, this is a workflow you’ll be using often anyway. But if you create long-lasting tokens or want to play around with the functions for setting or clearing your Git credentials, it can be handy to have your own record of your PAT in a secure place, like 1Password or Bitwarden.
+
+### 2.4 Put your PAT into the local Git credential store
+We assume you’ve created a PAT and have it available on your clipboard.
+
+How to insert your PAT in the Git credential store? Type this in the RStudio console:
+```
+gitcreds::gitcreds_set()
+```
+
+You already have the `gitcreds` package installed, because it came with `usethis`.
+
+If you don’t have a PAT stored already, it will prompt you to enter your PAT. Paste!
+
+```
+? Enter password or token: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+-> Adding new credentials...
+-> Removing credentials from cache...
+-> Done.
+```
+
+If you already have a stored credential, `gitcreds::gitcreds_set()` reveals this and will even let you inspect it. This helps you decide whether to keep the existing credential or replace it. When in doubt, embrace a new, known-to-be-good credential over an old one, of uncertain origins.
+
+If you have worked with GitHub before and previously made your GitHub PAT available by setting the `GITHUB_PAT` environment variable in `.Renviron`, come talk to the instructor for helping addressing it.
+
+The general function `usethis::git_sitrep()` will report on your PAT, along with other aspects of your Git/GitHub setup.
+```
+git_sitrep()
+```
+
+### 2.5 A note about ongoing PAT maintenance
+You are going to be (re-)generating and (re-)storing your PAT on a schedule dictated by its expiration period. By default, once per month.
+
+When the PAT expires, return to https://github.com/settings/tokens and click on its Note. (You do label your tokens nicely by use case, right? Right?) At this point, you can optionally adjust scopes and then click “Regenerate token”. You can optionally modify its Expiration and then click “Regenerate token” (again). As before, copy the PAT to the clipboard, call `gitcreds::gitcreds_set()`, and paste!
+
+Hopefully it’s becoming clear why each token’s Note is so important. The actual token may be changing, e.g., once a month, but its use case (and scopes) are much more persistent and stable.
+
+Phew! Glad we have now proved to GitHub who we are when we use RStudio.
+
+### 2.6 Ensure that Git/GitHub/RStudio are communicating
 We are going to go through a couple steps to make sure the Git/GitHub are communicating with RStudio.
 
 First, create a new project by clicking on the drop-down menu in the upper right and selecting "New Project". Alternatively, you could also go to File > New Project…, or click the little white + in a green circle with the R box in the top left.
@@ -176,3 +235,87 @@ Save this file (Cmd/Ctrl-S or File -> Save) and notice how it shows up in your G
 Great! You just made your first edits to a Git repository. Now let’s sync these changes back to GitHub.
 
 
+## 5. Sync from RStudio (local) to GitHub (remote)
+Syncing to GitHub.com means 4 steps:
+
+1. Pull
+1. Stage
+1. Commit
+1. Push
+
+We get ready by clicking on the Commit section.
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/sync1.png" width="600" />
+</p>
+
+# 5.1 Pull
+We start off by “Pulling” from the remote repository (GitHub.com) to make sure that our local copy has the most up-to-date information that is available online. Right now, since we just created the repo and are the only ones that have permission to work on it, we can be pretty confident that there isn’t new information available. But we pull anyways because this is a good habit to get into for when you start collaborating with yourself across computers or others. Best practice is to pull often: it costs nothing (other than an internet connection).
+
+Pull by clicking the teal Down Arrow. You should get a notification that your local copy is already up to date.
+
+# 5.2 Stage
+Notice also how when you highlight a filename, a preview of the differences displays below:
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/sync2.png" width="400" />
+</p>
+
+Next, click the boxes next to each file. This is called “staging" a file: you are indicating that you want GitHub to track the new changes to this file, and that you will be committing it shortly. Notice:
+
+* `.Rproj` file: the question marks turn into an A because this is a new file that has been added to your repo (automatically by RStudio, not by you).
+* `README.md` file: the M indicates that this was modified (by you)
+
+These are the codes used to describe how the files are changed (from the [RStudio cheatsheet](https://rstudio.github.io/cheatsheets/html/rstudio-ide.html)):
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/sync3.png" width="200" />
+</p>
+
+# 5.3 Commit
+Committing is different from saving our files to our local harddrive (which we still have to do! RStudio will indicate a file is unsaved with red text and an asterix). We commit a single file or a group of files when we are ready to save a snapshot in time of the progress we’ve made. Maybe this is after a big part of the analysis was done, or when you’re done working for the day.
+
+Committing our files is a 2-step process.
+
+First, you write a “commit message,” which is a human-readable note about what has changed that will accompany GitHub’s non-human-readable alphanumeric code to track our files. I think of commit messages like breadcrumbs to my Future Self: how can I use this space to be useful for me if I’m trying to retrace my steps (and perhaps in a panic?).
+
+Second, you press Commit.
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/sync4.png" width="400" />
+</p>
+
+When we have committed successfully, we get a rather unsuccessful-looking pop-up message. You can read this message as “Congratulations! You’ve successfully committed 2 files, 1 of which is new!” It is also providing you with that alphanumeric SHA code that GitHub is using to track these files.
+
+If our attempt was not successful, we will see an Error. Otherwise, interpret this message as a joyous one.
+
+> Does your pop-up message say “Aborting commit due to empty commit message.”
+> GitHub is really serious about writing human-readable commit messages.
+
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/sync5.png" width="400" />
+</p>
+
+When we close this window there is going to be (in my opinion) a very subtle indication that we are not done with the syncing process.
+
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/sync6.png" width="400" />
+</p>
+
+We have successfully committed our work as a breadcrumb-message-approved snapshot in time, but it still only exists locally on our computer. We can commit without an internet connection. However, we have not done anything yet to tell GitHub that we want this pushed to the remote repo at GitHub.com. So as the last step, we push.
+
+# 5.4 Push
+The last step in the syncing process is to Push! Click the green up arrow that says "Push."
+
+Awesome! We’re done here in RStudio for the moment, let’s check out the remote repo on github.com.
+
+# 6 Commit history
+The files you modified should be on github.com on the page for your repo. Go check them out!
+
+Notice how the `README.md` file you edited is automatically displayed at the bottom. Since it is good practice to have a README file that identifies what code does (i.e. why it exists), GitHub will display a Markdown file called README nicely formatted.
+
+Let’s also explore the commit history by clicking where it says "Commits":
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/history1.png" width="600" />
+</p>
+
+The 2 commits you’ve made (the first was when we originally initiated the repo from GitHub.com) are there! (my screenshot has three because I made another commit by mistake in there).
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/history2.png" width="600" />
+</p>
