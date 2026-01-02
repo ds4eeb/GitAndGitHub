@@ -1,6 +1,8 @@
 # Introduction to Git and GitHub
 
-Welcome! Today's assignment will walk you through using Git, GitHub, RStudio to interact with both, and, along the way, practice using Quarto and RStudio. Cool!
+Welcome! Today's assignment will walk you through using Git, GitHub, RStudio to interact with both, and, along the way, practice using Quarto and RStudio. Cool! The content has been adapted from a [workshop](https://rstudio-conf-2020.github.io/r-for-excel/github.html) that Openscapes developed.
+
+Please work with a partner on one computer and take turns "driving" (touching the keyboard) vs. "navigating" (figuring out what to do). This is called pair programming and is common practice in industry and computer science.
 
 ## 1. Create your repository
 The first step is to create the assignment repository in your personal GitHub account so that you can work on it. You will use the ds4eeb repository as a template.
@@ -95,3 +97,82 @@ If yes, hooray! If no, we will help you troubleshoot.
 
 * `which git` (Mac, Linux, or anything running a bash shell)
 * `where git` (Windows, when not in a bash shell)
+
+## 3. Clone your repository using RStudio
+Let’s clone your repo on GitHub to your local computer using RStudio. Unlike downloading, cloning keeps all the version control and user information bundled with the files.
+
+### 3.1 Copy the repo address
+First, copy the web address of the repository you want to clone. We will use HTTPS.
+
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/gh_repo_clone1.png" width="600" />
+</p>
+
+### 3.2 Paste the repo address
+Paste the repo address (which is still in your clipboard) into in the “Repository URL” field in RStudio, where you should still have the New Project wizard in progress. The “Project directory name” should autofill; if it does not press tab, or type it in. It is best practice to keep the “Project directory name” THE SAME as the repository name.
+
+When cloned, this repository is going to become a folder on your computer.
+
+At this point you can save this repo anywhere. There are different schools of thought, but we think it is useful to create a high-level folder for this class where you will keep your github repos to keep them organized. Press “Browse…” to navigate to a folder and you have the option of creating a new folder.
+
+Finally, click Create Project.
+
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/gh_repo_clone2.png" width="600" />
+</p>
+
+### 3.3 Admire your local repo
+If everything went well, the repository will show up in RStudio!
+
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/gh_repo_clone3.png" width="600" />
+</p>
+
+The repository is also saved to the location you specified, and you can navigate to it as you normally would in Finder or Windows Explorer:
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/gh_repo_clone4.png" width="600" />
+</p>
+
+Hooray!
+
+### 3.4 Inspect your local repo
+Let’s notice a few things:
+
+First, our working directory is set to the location of the repo and the Project (they are both in the same place), and GitAndGitHub is also named in the top right hand corner.
+
+Second, we have a Git tab in the top right pane! Let’s click on it.
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/gh_repo_clone5.png" width="600" />
+</p>
+
+Our Git tab has one item, an `.Rproj` file.
+
+This has been added to our repo by RStudio — we can also see it in the File pane in the bottom right of RStudio. This is a helper file that RStudio has added to streamline our workflow with GitHub and R. Note that this files begins with a period (`.`), which means they are hidden files: they show up in the Files pane of RStudio but won’t show up in your Finder or Windows Explorer.
+
+Going back to the Git tab, both these files have little yellow icons with question marks `?`. This is GitHub’s way of saying: “I am responsible for tracking everything that happens in this repo, but I’m not sure what is going on with these files yet. Do you want me to track them too?”
+
+We will handle this in a moment; first let’s look at the README.md file.
+
+## 4. Edit the README file
+The `README.md` file (which you have been following as instructions, by the way) is a GitHub-flavored Markdown file, which is very similar to Quarto. It’s like a Quarto file without the abilities to run R code. It does, however, have the super-power of being displayed easily on GitHub, which made these instructions easy to read.
+
+We will edit the file and illustrate how GitHub tracks files that have been modified (to complement seeing how it tracks files that have been added).
+
+README files are common in programming; they are the first place that someone will look to see why code exists and how to run it.
+
+Open the README by making sure the Files pane is selected in the lower right, then clicking the README.md file. It will open in the Scripts pane (upper left).
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/edit1.png" width="600" />
+</p>
+
+In your README, find the Header. It should begin with a hastag `#`.
+
+Please edit it to include your name and your partner's name. Make sure you keep the `#` so that it still displays as a header! Something like:
+
+`# Malin's GitAndGitHub repo`
+
+Save this file (Cmd/Ctrl-S or File -> Save) and notice how it shows up in your Git tab. It now has a blue “M”: GitHub is already tracking this file line-by-line, so it knows that something is different: it’s Modified with an M.
+
+Great! You just made your first edits to a Git repository. Now let’s sync these changes back to GitHub.
+
+
