@@ -4,21 +4,21 @@ Welcome! Today's assignment will walk you through using Git, GitHub, RStudio to 
 
 Please work with a partner on one computer and take turns "driving" (touching the keyboard) vs. "navigating" (figuring out what to do). This is called pair programming and is common practice in industry and computer science.
 
-If you need to jump to a different part of this document, click the menu icon (<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/menuicon.png" width="35"/>) in the upper right of this document to see a simple table of contents.
+If you need to jump to a different part of this document, click the menu icon (<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/menuicon.png" width="35"/>) in the upper right of this document to see a simple table of contents.
 
 ## 1. Create your repository
 The first step is to create the assignment repository in your personal GitHub account so that you can work on it. You will use the ds4eeb repository as a template.
 
 To do that, click the green "Use this template" button in the upper right and select "Create in a new repository."  
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/usetemplate.jpg" width="400" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/usetemplate.jpg" width="400" />
 </p>
 
 Please start the name of your repository with "GitAndGitHub" so that we can identify it later, and choose Public for Visibility.
 
 Admire your first repo! It should look a lot like the ds4eeb one you started with, but now it's in your own account. You can see that in the URL (web address) and in the upper left of the GitHub page, where it shows the repo name after your account name.
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/ownrepo.png" width="400" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/ownrepo.png" width="400" />
 </p>
 
 ## 2. Set up RStudio to communicate with GitHub
@@ -134,22 +134,22 @@ We are going to go through a couple steps to make sure the Git/GitHub are commun
 
 First, create a new project by clicking on the drop-down menu in the upper right and selecting "New Project". Alternatively, you could also go to File > New Project…, or click the little white + in a green circle with the R box in the top left.
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/newproject1.png" width="600" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/newproject1.png" width="600" />
 </p>
 
 Next, select Version Control:
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/newproject2.png" width="400" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/newproject2.png" width="400" />
 </p>
 
 Then select Git (since we are using Git):
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/newproject3.png" width="400" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/newproject3.png" width="400" />
 </p>
 
 Do you see this?
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/newproject4.png" width="400" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/newproject4.png" width="400" />
 </p>
 
 If yes, hooray! If no, we will help you troubleshoot.
@@ -167,7 +167,7 @@ Let’s clone your repo on GitHub to your local computer using RStudio. Unlike d
 First, copy the web address of the repository you want to clone. We will use HTTPS.
 
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/gh_repo_clone1.png" width="600" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/gh_repo_clone1.png" width="600" />
 </p>
 
 ### 3.2 Paste the repo address
@@ -180,19 +180,19 @@ At this point you can save this repo anywhere. There are different schools of th
 Finally, click Create Project.
 
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/gh_repo_clone2.png" width="600" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/gh_repo_clone2.png" width="600" />
 </p>
 
 ### 3.3 Admire your local repo
 If everything went well, the repository will show up in RStudio!
 
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/gh_repo_clone3.png" width="600" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/gh_repo_clone3.png" width="600" />
 </p>
 
 The repository is also saved to the location you specified, and you can navigate to it as you normally would in Finder or Windows Explorer:
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/gh_repo_clone4.png" width="600" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/gh_repo_clone4.png" width="600" />
 </p>
 
 Hooray!
@@ -204,7 +204,7 @@ First, our working directory is set to the location of the repo and the Project 
 
 Second, we have a Git tab in the top right pane! Let’s click on it.
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/gh_repo_clone5.png" width="600" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/gh_repo_clone5.png" width="600" />
 </p>
 
 Our Git tab has one item, an `.Rproj` file.
@@ -224,7 +224,7 @@ README files are common in programming; they are the first place that someone wi
 
 Open the README by making sure the Files pane is selected in the lower right, then clicking the README.md file. It will open in the Scripts pane (upper left).
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/edit1.png" width="600" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/edit1.png" width="600" />
 </p>
 
 In your README, find the Header. It should begin with a hastag `#`.
@@ -247,7 +247,7 @@ Syncing to GitHub.com means 4 steps:
 
 We get ready by clicking on the Commit section.
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/sync1.png" width="600" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/sync1.png" width="600" />
 </p>
 
 ### 5.1 Pull
@@ -258,7 +258,7 @@ Pull by clicking the teal Down Arrow. You should get a notification that your lo
 ### 5.2 Stage
 Notice also how when you highlight a filename, a preview of the differences displays below:
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/sync2.png" width="400" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/sync2.png" width="400" />
 </p>
 
 Next, click the boxes next to each file. This is called “staging" a file: you are indicating that you want GitHub to track the new changes to this file, and that you will be committing it shortly. Notice:
@@ -268,7 +268,7 @@ Next, click the boxes next to each file. This is called “staging" a file: you 
 
 These are the codes used to describe how the files are changed (from the [RStudio cheatsheet](https://rstudio.github.io/cheatsheets/html/rstudio-ide.html)):
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/sync3.png" width="200" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/sync3.png" width="200" />
 </p>
 
 ### 5.3 Commit
@@ -280,7 +280,7 @@ First, you write a “commit message,” which is a human-readable note about wh
 
 Second, you press Commit.
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/sync4.png" width="400" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/sync4.png" width="400" />
 </p>
 
 When we have committed successfully, we get a rather unsuccessful-looking pop-up message. You can read this message as “Congratulations! You’ve successfully committed 2 files, 1 of which is new!” It is also providing you with that alphanumeric SHA code that GitHub is using to track these files.
@@ -291,13 +291,13 @@ If our attempt was not successful, we will see an Error. Otherwise, interpret th
 > GitHub is really serious about writing human-readable commit messages.
 
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/sync5.png" width="400" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/sync5.png" width="400" />
 </p>
 
 When we close this window there is going to be (in my opinion) a very subtle indication that we are not done with the syncing process.
 
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/sync6.png" width="400" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/sync6.png" width="400" />
 </p>
 
 We have successfully committed our work as a breadcrumb-message-approved snapshot in time, but it still only exists locally on our computer. We can commit without an internet connection. However, we have not done anything yet to tell GitHub that we want this pushed to the remote repo at GitHub.com. So as the last step, we push.
@@ -314,10 +314,10 @@ Notice how the `README.md` file you edited is automatically displayed at the bot
 
 Let’s also explore the commit history by clicking where it says "Commits":
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/history1.png" width="700" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/history1.png" width="700" />
 </p>
 
 The 2 commits you’ve made (the first was when we originally initiated the repo from GitHub.com) are there! (my screenshot has three because I made another commit by mistake in there).
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/history2.png" width="700" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/history2.png" width="700" />
 </p>
