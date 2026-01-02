@@ -4,6 +4,8 @@ Welcome! Today's assignment will walk you through using Git, GitHub, RStudio to 
 
 Please work with a partner on one computer and take turns "driving" (touching the keyboard) vs. "navigating" (figuring out what to do). This is called pair programming and is common practice in industry and computer science.
 
+If you need to jump to a different part of this document, click the menu icon (<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/menuicon.png" width="35"/>) in the upper right of this document to see a simple table of contents.
+
 ## 1. Create your repository
 The first step is to create the assignment repository in your personal GitHub account so that you can work on it. You will use the ds4eeb repository as a template.
 
@@ -20,6 +22,7 @@ Admire your first repo! It should look a lot like the ds4eeb one you started wit
 </p>
 
 ## 2. Set up RStudio to communicate with GitHub
+
 ### 2.1 Install packages
 We're going to use a "package" called `usethis` to make it easy for RStudio and GitHub to work together. In R, a package bundles together reusable code to accomplish a particular purpose, along with data and documentation, and is easy to share with others. Packages are part of what makes R so powerful because anyone can improve or add to existing base R capabilities.
 
@@ -234,7 +237,6 @@ Save this file (Cmd/Ctrl-S or File -> Save) and notice how it shows up in your G
 
 Great! You just made your first edits to a Git repository. Now let’s sync these changes back to GitHub.
 
-
 ## 5. Sync from RStudio (local) to GitHub (remote)
 Syncing to GitHub.com means 4 steps:
 
@@ -248,12 +250,12 @@ We get ready by clicking on the Commit section.
 <img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/sync1.png" width="600" />
 </p>
 
-# 5.1 Pull
+### 5.1 Pull
 We start off by “Pulling” from the remote repository (GitHub.com) to make sure that our local copy has the most up-to-date information that is available online. Right now, since we just created the repo and are the only ones that have permission to work on it, we can be pretty confident that there isn’t new information available. But we pull anyways because this is a good habit to get into for when you start collaborating with yourself across computers or others. Best practice is to pull often: it costs nothing (other than an internet connection).
 
 Pull by clicking the teal Down Arrow. You should get a notification that your local copy is already up to date.
 
-# 5.2 Stage
+### 5.2 Stage
 Notice also how when you highlight a filename, a preview of the differences displays below:
 <p align="center">
 <img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/sync2.png" width="400" />
@@ -269,7 +271,7 @@ These are the codes used to describe how the files are changed (from the [RStudi
 <img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/sync3.png" width="200" />
 </p>
 
-# 5.3 Commit
+### 5.3 Commit
 Committing is different from saving our files to our local harddrive (which we still have to do! RStudio will indicate a file is unsaved with red text and an asterix). We commit a single file or a group of files when we are ready to save a snapshot in time of the progress we’ve made. Maybe this is after a big part of the analysis was done, or when you’re done working for the day.
 
 Committing our files is a 2-step process.
@@ -300,7 +302,7 @@ When we close this window there is going to be (in my opinion) a very subtle ind
 
 We have successfully committed our work as a breadcrumb-message-approved snapshot in time, but it still only exists locally on our computer. We can commit without an internet connection. However, we have not done anything yet to tell GitHub that we want this pushed to the remote repo at GitHub.com. So as the last step, we push.
 
-# 5.4 Push
+### 5.4 Push
 The last step in the syncing process is to Push! Click the green up arrow that says "Push."
 
 Awesome! We’re done here in RStudio for the moment, let’s check out the remote repo on github.com.
@@ -312,10 +314,10 @@ Notice how the `README.md` file you edited is automatically displayed at the bot
 
 Let’s also explore the commit history by clicking where it says "Commits":
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/history1.png" width="600" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/history1.png" width="700" />
 </p>
 
 The 2 commits you’ve made (the first was when we originally initiated the repo from GitHub.com) are there! (my screenshot has three because I made another commit by mistake in there).
 <p align="center">
-<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/history2.png" width="600" />
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/history2.png" width="700" />
 </p>
