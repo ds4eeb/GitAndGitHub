@@ -13,5 +13,8 @@ To do that, click the green "Use this template" button in the upper right and se
 Please give it the same name ("GitAndGitHub") so that we can identify it later, and choose Public for Visibility.
 
 Admire your first repo! It should look a lot like the ds4eeb one you started with, but now it's in your own account. You can see that in the URL (web address) and in the upper left of the GitHub page, where it shows the repo name after your account name.
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/ownrepo.png" width="400" />
+</p>
 
 ## 2. 
