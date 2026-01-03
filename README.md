@@ -215,10 +215,10 @@ Going back to the Git tab, both these files have little yellow icons with questi
 
 We will handle this in a moment; first let’s look at the README.md file.
 
-## 4. Edit the README file
+## 4. Edit a Quarto-like document
 The `README.md` file (which you have been following as instructions, by the way) is a GitHub-flavored Markdown file, which is very similar to Quarto. It’s like a Quarto file without the abilities to run R code. It does, however, have the super-power of being displayed easily on GitHub, which made these instructions easy to read.
 
-We will edit the file and illustrate how GitHub tracks files that have been modified (to complement seeing how it tracks files that have been added).
+You will edit the file for practice reading and interpreting Quarto, and then illustrate how GitHub tracks files that have been modified (to complement seeing how it tracks files that have been added).
 
 README files are common in programming; they are the first place that someone will look to see why code exists and how to run it.
 
@@ -227,7 +227,9 @@ Open the README by making sure the Files pane is selected in the lower right, th
 <img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/edit1.png" width="600" />
 </p>
 
-In your README, find the Header. It should begin with a hastag `#`.
+Skim through it to see which Quarto tags you recognize. Look for headers and lists!
+
+In your README, find the Header. It should begin with a hashtag `#`.
 
 Please edit it to include your name and your partner's name. Make sure you keep the `#` so that it still displays as a header! Something like:
 
@@ -307,7 +309,7 @@ The last step in the syncing process is to Push! Click the green up arrow that s
 
 Awesome! We’re done here in RStudio for the moment, let’s check out the remote repo on github.com.
 
-# 6 Commit history
+## 6 Commit history
 The files you modified should be on github.com on the page for your repo. Go check them out!
 
 Notice how the `README.md` file you edited is automatically displayed at the bottom. Since it is good practice to have a README file that identifies what code does (i.e. why it exists), GitHub will display a Markdown file called README nicely formatted.
@@ -321,3 +323,83 @@ The 2 commits you’ve made (the first was when we originally initiated the repo
 <p align="center">
 <img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/history2.png" width="700" />
 </p>
+
+## 7 Make your own Quarto document
+
+### 7.1 Create and edit
+Now time to make your own Quarto document!
+
+Select File > New File > Quarto Document … (or click the green plus in the top left corner and select "Quarto Document").
+
+RStudio will give you a dialog box to fill in the title and author now. Fill these in however you wish and leave the other options at their defaults.
+
+RStudio provides you with some default contents in the Quarto document, including a YAML header, some text, and some code blocks. 
+
+Please delete the text and code blocks (everything below the second set of `---`).
+
+> __Efficiency Tip__: I use Cmnd-Shift-Down Arrow (Mac) or Ctrl-Shift-End (Windows) to highlight text from my cursor to the end of the document.
+
+Now please edit a few things in the Quarto document:
+
+1. Add a date to the YAML header (e.g., `date: 2025-01-02`)
+2. Edit the YAML header output format to use gfm (instead of html)
+3. Add a least two headers of different priorities (different numbers of #s)
+4. Add at least one line of regular text with at least one word each in italics and bold
+5. Add one code block in R that adds 10+20
+
+The [Quarto basics page](https://quarto.org/docs/authoring/markdown-basics.html) is a useful reference!
+
+Notice that RStudio is displaying the name of your Quarto document in red? That means it has unsaved chnages. Now would be a good time to save them!
+
+### 7.2 Render
+To render your Quarto document, click the "->Render" button at the top of this window.
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/render1.png" width="400" />
+</p>
+
+You should see RStudio running for a bit and display some messages in the bottom-left pane. 
+
+When it's done, you'll see the rendered document in the Viewer pane (right side). Exciting!
+
+If you instead run into error messages, see if you can debug where the error is. Or call someone from the teaching team over to help!
+
+Now also look at the Files pane in the lower right (you may need to click on the Files tab over there to show it).
+<p align="center">
+<img src="https://github.com/ds4eeb/GitAndGitHub/blob/main/data/images/render2.png" width="400" />
+</p>
+
+Notice that a new .md file has also been created. This is the rendered Github-flavored markdown file that you specified your .qmd file would be output as. Cool!
+
+If you want, play around with other output formats, like .pdf, .docx, or .html.
+
+### 7.3 Sync
+Remember what we did in Section 5? Now time to do it on your own: 
+1. Pull
+2. Stage (be sure to stage both the .qmd file and the rendered .md file that you created)
+3. Commit
+4. Push
+
+### 7.4 View on GitHub
+To make sure it all worked, now go to your repo on github.com and find the new .md file you just pushed to GitHub. Click to open it. You might need to refresh your repo's webpage for it to show up.
+
+Notice how it is rendered nicely and formats well on GitHub. Cool!
+
+## 8 Create an issue on GitHub
+As your last task, you'll create a new Issue on GitHub. 
+
+To get started, click the "Issues" tab at the top of the GitHub page.
+
+Now, click the big green "New Issue" button in the upper right.
+
+Think of a challenge you had during this assignment (whether you solved it or not) and type a short but descriptive title.
+
+Then, in the body, describe the issue you had and whether and how you addressed it.
+
+If you want, you can play with adding Assignees (who should address this issue?) or Labels using the gear icons on the right side of the page.
+
+Finally, click the big green "Create" button at the bottom.
+
+Congratulations, you've submitted your first issue!
+
+## 9 Submit your assignment
+To submit this assignment, please go back to Canvas and follow the instructions on submitting the repo through Gradescope using the GitHub submission method.
